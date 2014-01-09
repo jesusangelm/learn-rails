@@ -1,4 +1,21 @@
-<h3>Inicio</h3>
-<p>Bienvenido a la web de <%= @owner.name %>.</p>
-<p>Naci el <%= @owner.birthdate %>.</p>
-<p>¡Faltan solo <%= @owner.countdown %> dias para mi cumpleaños!</p>
+<% content_for :title do %>Foobar Kadigan<% end %>
+<% content_for :description do %>Pagina de Foobar Kadigan<% end %>
+<section>
+  <img src="http://lorempixel.com/1170/600/cats/1">
+</section>
+<section>
+  <div class="column">
+    <h2>Mantente actualizado</h2>
+  </div>
+  <div class="column">
+    <div class="form-centered">
+      <%= simple_form_for @visitor do |f| %>
+        <%= f.error_notification %>
+      <%= f.input :email, label: false, :placeholder => 'Su Correo...' %>
+      <br/>
+      <%= f.button :submit, "Registrate en la lista de noticias",
+                   :class => "submit" %>
+    <% end %>
+    </div>
+  </div>
+</section>
